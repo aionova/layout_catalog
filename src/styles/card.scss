@@ -1,23 +1,36 @@
 .card {
   width: $card-width;
-  padding: 30px 14px 15px;
+  padding: 14px 14px 15px;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  
+
+  &:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
   &__image {
-    width: 160px;
-    height: 134px;
-    margin: 0 auto 45px;
-    border: none;
+  
+    width: 166px;
+    height: 150px;
+    margin: 0 auto;
+    transition: transform 1s;
+    padding: 16px 3px 0;
+   
+
+    &:hover {
+      transform: scale(1.2);
+      border: 3px solid #f3f3f3;
+      position: relative;
+    }
   }
 
   &__name {
     font-size: $fs;
     line-height: 15px;
     font-weight: 500;
-    margin-bottom: 5px;
+    margin: 45px 0 5px;
   }
 
   &__code {
@@ -69,6 +82,7 @@
     background-color: $accent-color;
     border: 1px solid $accent-color;
     border-radius: 5px;
+    transition: color 0.5s, background-color 0.5s;
   }
   &__button:hover {
     color: $accent-color;
