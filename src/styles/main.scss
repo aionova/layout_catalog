@@ -1,6 +1,5 @@
 $accent-color: #00acdc;
 $card-width: 200px;
-$card-gap: 48px;
 $fs: 12px;
 
 @mixin smallFont {
@@ -15,16 +14,17 @@ html {
 
 .main {
   &__container {
-    display: flex;
-    width: ($card-width + $card-gap) * 4;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, $card-width);
+    gap: 50px 48px;
+    margin-top: 50px;
     justify-content: center;
-    justify-items: center;
-    margin: 50px auto;
   }
- 
-  &__card {
-    margin: 0 24px 50px;
+}
+
+@media (max-width: ($card-width + 48px) * 4) {
+  .main__container {
+    grid-template-columns: repeat(auto-fit, $card-width);
   }
 }
 
