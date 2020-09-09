@@ -1,7 +1,10 @@
 $accent-color: #00acdc;
+$border-color: #f3f3f3;
 $card-width: 200px;
 $card-gap: 48px;
+$card-num: 4;
 $fs: 12px;
+$transition-time: 0.5s;
 
 @mixin smallFont {
   font-size: 11px;
@@ -15,16 +18,15 @@ html {
 
 .main {
   &__container {
-    display: flex;
-    width: ($card-width + $card-gap) * 4;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, $card-width);
+    gap: 50px 48px;
+    margin-top: 50px;
     justify-content: center;
-    justify-items: center;
-    margin: 50px auto;
-  }
- 
-  &__card {
-    margin: 0 24px 50px;
+
+    @media (max-width: ($card-width + $card-gap) * $card-num) {
+      grid-template-columns: repeat(auto-fit, $card-width);
+    }
   }
 }
 
